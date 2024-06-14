@@ -4,6 +4,7 @@
 
     <application>
 
+        <activity android:name=".scheme.SchemeToolActivity" />
         <activity
             android:name=".ToolsMainActivity"
             android:theme="@style/Theme.MsTools.NoActionBar" />
