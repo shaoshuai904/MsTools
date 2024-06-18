@@ -8,6 +8,10 @@
     tools:context=".scheme.SchemeToolActivity"
     tools:ignore="HardcodedText">
 
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/base_app_top_bar" />
+
     <EditText
         android:id="@+id/et_text"
         android:layout_width="match_parent"
