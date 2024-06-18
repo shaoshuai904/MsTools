@@ -5,15 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    tools:context=".scheme.SchemeToolActivity"
     tools:ignore="HardcodedText">
 
     <EditText
         android:id="@+id/et_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:hint="sinaweibo://gotoHome"
-        android:inputType="text" />
+        android:layout_marginRight="10dp"
+        android:autofillHints=""
+        android:background="@drawable/shape_base_fillet_border_bg"
+        android:hint="scheme url"
+        android:inputType="text"
+        android:padding="10dp"
+        android:singleLine="false" />
 
     <Button
         android:id="@+id/bt_send"
