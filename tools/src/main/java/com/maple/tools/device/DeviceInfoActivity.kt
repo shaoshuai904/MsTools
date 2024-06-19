@@ -105,12 +105,13 @@ class DeviceInfoActivity : BaseActivity() {
     private fun addDeviceScreenInfoData(kvs: MutableList<ItemInfoBean>) {
         kvs.add(TitleBean("屏幕信息"))
         val rect = DisplayUtil.getDeviceScreenRect(mContext, 0)
-        kvs.add(KeyValueBean("屏幕像素", "${rect.width()} * ${rect.height()}"))
-        kvs.add(KeyValueBean("像素密度", "${DisplayUtil.getDensityDpi(mContext)}"))
-        val sysBar = "顶部状态栏：${DisplayUtil.getStatusBarHeight(mContext)}" +
-                "\n底部导航栏：${DisplayUtil.getNavigationBarHeight(mContext)}"
+        kvs.add(KeyValueBean("屏幕分辨率", "${rect.width()} * ${rect.height()} px"))
+        kvs.add(KeyValueBean("像素密度", "${DisplayUtil.getDensityDpi(mContext)} dp"))
+        val sysBar = "顶部状态栏：${DisplayUtil.getStatusBarHeight(mContext)} px" +
+                "\n底部导航栏：${DisplayUtil.getNavigationBarHeight(mContext)} px"
         // val isShow = if (DisplayUtil.hasNavBar(mContext)) "- (显示中)" else ""// todo 华为有问题！
         kvs.add(KeyValueBean("系统栏高度", sysBar))
+        // 屏幕尺寸：6.6 英寸 (2.8" * 6.0")
     }
 
     private fun addBuildData(kvs: MutableList<ItemInfoBean>) {

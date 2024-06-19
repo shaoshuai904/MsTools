@@ -64,7 +64,7 @@ open class KeyValueAdapter(val mContext: Context) : BaseQuickAdapter<ItemInfoBea
     // No Data
     inner class NoDataHolder(val binding: ItemInfoNoDataBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: NoDataBean) {
-            // bindViewClickListener(this)
+            bindViewClickListener(this)
             binding.tvMessage.text = item.message
         }
     }

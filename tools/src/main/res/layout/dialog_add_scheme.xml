@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center_horizontal"
+        android:text="添加自定义Scheme"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="4dp"
+        android:text="自定义备注："
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/et_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_base_fillet_border_bg"
+        android:hint="备注名称"
+        android:inputType="textMultiLine"
+        android:maxHeight="100dp"
+        android:padding="8dp"
+        android:singleLine="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="4dp"
+        android:text="自定义 Scheme："
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/et_scheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_base_fillet_border_bg"
+        android:hint="scheme url"
+        android:inputType="textMultiLine"
+        android:maxHeight="300dp"
+        android:padding="8dp"
+        android:singleLine="false" />
+
+</LinearLayout>

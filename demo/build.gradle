@@ -17,7 +17,13 @@ android {
     }
 
     signingConfigs {
-        config {
+        debug {
+            storeFile rootProject.file('./demo/ms_tools.jks')
+            storePassword 'mapleshao'
+            keyAlias 'ishare'
+            keyPassword 'mapleshao'
+        }
+        release {
             storeFile rootProject.file('./demo/ms_tools.jks')
             storePassword 'mapleshao'
             keyAlias 'ishare'
