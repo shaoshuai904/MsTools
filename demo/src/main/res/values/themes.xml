@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">#4b9afb</item>
-        <item name="colorPrimaryVariant">#2196F3</item>
+        <item name="colorPrimary">@color/tools_top_bar</item>
+        <item name="colorPrimaryVariant">@color/tools_top_bar</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>

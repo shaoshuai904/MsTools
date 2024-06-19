@@ -53,8 +53,8 @@ class DeviceInfoActivity : BaseActivity() {
 
     private fun getConfigListData(): MutableList<ItemInfoBean> {
         val kvs = mutableListOf<ItemInfoBean>()
-        addDeviceInfoData(kvs)
         addDeviceScreenInfoData(kvs)
+        addDeviceInfoData(kvs)
         addBuildData(kvs)
         addAppInfoData(kvs)
         addOtherData(kvs)
@@ -107,22 +107,19 @@ class DeviceInfoActivity : BaseActivity() {
         val rect = DisplayUtil.getDeviceScreenRect(mContext, 0)
         kvs.add(KeyValueBean("屏幕像素", "${rect.width()} * ${rect.height()}"))
         kvs.add(KeyValueBean("像素密度", "${DisplayUtil.getDensityDpi(mContext)}"))
-        kvs.add(KeyValueBean("顶部状态栏高度", "${DisplayUtil.getStatusBarHeight(mContext)}"))
+        val sysBar = "顶部状态栏：${DisplayUtil.getStatusBarHeight(mContext)}" +
+                "\n底部导航栏：${DisplayUtil.getNavigationBarHeight(mContext)}"
         // val isShow = if (DisplayUtil.hasNavBar(mContext)) "- (显示中)" else ""// todo 华为有问题！
-        kvs.add(KeyValueBean("底部导航栏高度", "${DisplayUtil.getNavigationBarHeight(mContext)}"))
+        kvs.add(KeyValueBean("系统栏高度", sysBar))
     }
 
     private fun addBuildData(kvs: MutableList<ItemInfoBean>) {
-        kvs.addAll(
-            arrayListOf(
-                TitleBean("主板信息"),
-                KeyValueBean("产品型号", Build.PRODUCT),
-                KeyValueBean("制造商", Build.MANUFACTURER),
-                KeyValueBean("DEVICE", Build.DEVICE),
-                KeyValueBean("主板", Build.BOARD),
-            )
-        )
+        kvs.add(TitleBean("主板信息"))
+        kvs.add(KeyValueBean("产品型号", Build.PRODUCT))
+        kvs.add(KeyValueBean("制造商", Build.MANUFACTURER))
+        kvs.add(KeyValueBean("主板", Build.BOARD))
         kvs.add(KeyValueBean("处理器", Build.HARDWARE))
+        kvs.add(KeyValueBean("DEVICE", Build.DEVICE))
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             // SOC 制造商 + 型号
             kvs.add(KeyValueBean("SOC型号", "${Build.SOC_MANUFACTURER} - ${Build.SOC_MODEL}"))

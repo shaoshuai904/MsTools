@@ -8,7 +8,7 @@ import com.maple.demo.databinding.ItemToolBinding
 import com.maple.msdialog.adapter.BaseQuickAdapter
 
 data class ToolBean(
-    var iconRes: Int = R.drawable.ic_menu_camera,
+    var iconRes: Int = R.drawable.svg_device_dev,
     var title: String = "默认名称",
     var clsName: Class<*>
 )

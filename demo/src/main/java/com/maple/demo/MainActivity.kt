@@ -2,14 +2,28 @@ package com.maple.demo
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.maple.demo.databinding.ActivityMainBinding
+import com.maple.tools.base.BaseActivity
 
 /**
  * 工具集主页面
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+    private val adapter by lazy {
+        ToolsAdapter(mContext).apply {
+            setOnItemClickListener { item, _ ->
+                startActivity(Intent(this@MainActivity, item.clsName))
+            }
+            setOnItemLongClickListener { _, position ->
+                val record = getItem(position)
+                Toast.makeText(mContext, "long click ${record.title}", Toast.LENGTH_SHORT).show()
+                true
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -18,17 +32,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initUI(binding: ActivityMainBinding) {
-        val adapter = ToolsAdapter(baseContext).apply {
-            setOnItemClickListener { item, _ ->
-                startActivity(Intent(this@MainActivity, item.clsName))
+        with(binding) {
+            with(topBar) {
+                ivBack.visibility = View.GONE
+                tvTitle.text = "开发工具集"
             }
-            setOnItemLongClickListener { _, position ->
-                val record = getItem(position)
-                Toast.makeText(this@MainActivity, "long click ${record.title}", Toast.LENGTH_SHORT).show()
-                true
-            }
+            rvData.adapter = adapter
         }
-        binding.rvData.adapter = adapter
         adapter.refreshData(Constant.toolData)
     }
 

@@ -15,8 +15,12 @@ class ToolsMainActivity : AppCompatActivity() {
     }
 
     private fun initUI(binding: ActivityToolsMainBinding) {
-//        binding.rvData.adapter = adapter
-//        adapter.refreshData(toolData)
+        with(binding) {
+            with(topBar) {
+                ivBack.setOnClickListener { onBackPressed() }
+                tvTitle.text = "更多功能"
+            }
+        }
     }
 
 }

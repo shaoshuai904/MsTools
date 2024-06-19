@@ -13,7 +13,7 @@ object Constant {
     val toolData = mutableListOf<ToolBean>(
         ToolBean(R.drawable.svg_link, "Scheme", SchemeToolActivity::class.java),
         ToolBean(R.drawable.svg_device_dev, "设备信息", DeviceInfoActivity::class.java),
-        ToolBean(R.drawable.svg_device_dev, "标题3", ToolsMainActivity::class.java)
+        ToolBean(R.drawable.svg_more, "更多", ToolsMainActivity::class.java)
     )
 
 }
