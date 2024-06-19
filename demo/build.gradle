@@ -16,6 +16,14 @@ android {
         resConfigs "zh", "en" // 只保留中英文
     }
 
+    signingConfigs {
+        config {
+            storeFile rootProject.file('./demo/ms_tools.jks')
+            storePassword 'mapleshao'
+            keyAlias 'ishare'
+            keyPassword 'mapleshao'
+        }
+    }
     buildTypes {
         debug {
             minifyEnabled false // 混淆代码
@@ -38,6 +46,6 @@ android {
 
 dependencies {
     implementation project(path: ':tools')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+//    implementation 'androidx.appcompat:appcompat:1.6.1'
 }
