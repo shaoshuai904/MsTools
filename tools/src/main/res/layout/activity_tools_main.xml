@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="欢迎提需求，联系邵帅"
+        android:text="欢迎提需求，联系邵帅\n15810723012"
         android:textSize="24sp" />
 
 </LinearLayout>
